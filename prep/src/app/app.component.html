@@ -1,0 +1,23 @@
+<div class="container">
+  <form class="jumbotron">
+    <h3 class="display-4">Butta qualcosa come spam</h3>
+    <div class="form-group">
+      <label class="mx-1" for="text">Spazzatura</label>
+      <input name="text" #newText>
+    </div>
+    <div class="form-group">
+      <label class="mx-1" for="num">Butta</label>
+      <input name="num" #newNum>
+    </div>
+    <button (click)="addArticle(newText, newNum)" class="btn btn-primary">
+    Submit spam
+    </button>
+  </form>
+  <div class="card">
+    <ul class="list-group">
+      <li class="list-group-item bg-success text-white my-1" *ngFor="let article of articles">
+        <app-n-s [article]="article"></app-n-s>
+      </li>
+    </ul>
+  </div>
+</div>
