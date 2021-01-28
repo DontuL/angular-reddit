@@ -10,7 +10,14 @@
         <input name="link" #newlink class="form-control">
       </div>
     <button (click)="addArticle(newtitle, newlink)" class="btn btn-primary">
-      Submit link
+        Submit link
     </button>
   </form>
+  <div class="card">
+    <ul class="list-group">
+      <li class="list-group-item bg-success text-white my-1" *ngFor="let title of articles">
+        <app-article [title]="title"></app-article>
+      </li>
+    </ul>
+  </div>
 </div>
