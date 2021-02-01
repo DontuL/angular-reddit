@@ -13,11 +13,11 @@
         Submit link
     </button>
   </form>
-  <div class="card">
-    <ul class="list-group">
-      <li class="list-group-item bg-success text-white my-1" *ngFor="let title of articles">
-        <app-article [title]="title"></app-article>
-      </li>
-    </ul>
+
+  <div class="container">
+    <app-article
+    *ngFor="let art of sortedArticles()" [article]="art">
+  </app-article>
   </div>
 </div>
+
