@@ -14,10 +14,13 @@
     </button>
   </form>
 
-  <div class="container">
+  <div *ngIf = "show" class="container">
     <app-article
     *ngFor="let art of sortedArticles()" [article]="art">
   </app-article>
   </div>
+  <button (click)="mostra()" class="btn btn-primary">
+        Mostra
+    </button>
 </div>
 

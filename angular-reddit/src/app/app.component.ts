@@ -8,7 +8,9 @@ import { Article } from './article/article.model';
 })
 export class AppComponent {
   articles:Article[];
+  show:Boolean=true;
   constructor(){
+
     this.articles = [
 
     ];
@@ -23,6 +25,9 @@ export class AppComponent {
   }
   sortedArticles(): Article[] {
     return this.articles.sort((a: Article, b: Article) => b.votes - a.votes);
+  }
+  mostra  (){
+    this.show = !this.show;
   }
 
 }
