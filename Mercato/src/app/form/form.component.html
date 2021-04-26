@@ -1,0 +1,34 @@
+<div class="container">
+ <h2>Demo Form: Nico gae</h2>
+ <form [formGroup]="myForm"
+       (ngSubmit)="onSubmit(myForm.value)"
+       class="jumbotron">
+
+   <div class="form-group">
+     <label for="nomeInput">Nome</label>
+     <input type="text"
+           id="nomeInput"
+           placeholder="Nome"
+           name="nome"
+           [formControl]="myForm.controls['nome']"
+           class="form-control">
+   </div>
+   <div class="form-group">
+     <label for="nomeInput">Pasword</label>
+     <input type="text"
+           id="paswordInput"
+           placeholder="Pasword"
+           name="pasword"
+           [formControl]="myForm.controls['pasword']"
+           class="form-control">
+   </div>
+
+   <div *ngIf="!myForm.controls['nome'].valid"
+         class="alert alert-danger">Nome is invalid
+   </div>
+   <div *ngIf="myForm.controls['nome'].hasError('required')"
+         class="alert alert-danger">Nome is required
+   </div>
+   <button type="submit" class="btn btn-primary">Submit</button>
+ </form>
+
